@@ -1,10 +1,16 @@
 package tranhanhtrithienthanh.Lab_3.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
 @Data
 @Entity
 @Table(name = "category")
@@ -16,4 +22,4 @@ public class Category {
     private  String name;
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Book> books;
-}
+  }
